@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang=\"es\">
+
+<head>
+    <meta charset=\"UTF-8\" />
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+    <title>Document</title>
+    <style>
+        body>p:nth-child(2) {
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table#table3 {
+            table-layout: fixed;
+            width: 100%;
+            text-align: center;
+        }
+
+        table#table3,
+        table#table3 td,
+        table#table3 th {
+            border-collapse: collapse;
+        }
+
+        table#table3 th {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        table#table3 td,
+        table#table3 th {
+            margin: 0;
+            padding: 6px;
+            width: 50%;
+        }
+
+        #table1,
+        #table2 {
+            table-layout: fixed;
+        }
+
+        .parent {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <p> PRESTAMOS PERSONALES <br>LIBRE DISPONBILIDAD S/GT1A <br>LIBRE DISPONBILIDAD </p>
+    <p>Cronograma de pagos</p>
+    <div class=\"parent\">
+        <div id=\"div1\">
+            <table id=\"table1\">
+                <tbody>
+                    <tr>
+                        <td>Cuenta</td>
+                        <td>000128799833</td>
+                    </tr>
+                    <tr>
+                        <td>Referencia</td>
+                        <td>Sin observaciones</td>
+                    </tr>
+                    <tr>
+                        <td>Moneda</td>
+                        <td>SOL</td>
+                    </tr>
+                    <tr>
+                        <td>Importe</td>
+                        <td>S/ ${loanAmountRequest!0.0}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id=\"div2\">
+            <table id=\"table2\">
+                <tbody>
+                    <tr>
+                        <td>Fecha de Inicio</td>
+                        <td>${firstPaymentDate!''}</td>
+                    </tr>
+                    <tr>
+                        <td>Nro. Cuotas</td>
+                        <td>${feesQuantity!0}</td>
+                    </tr>
+                    <tr>
+                        <td>Tasa Efe Anual</td>
+                        <td>${annualEffectiveInterestRate!0.0}%</td>
+                    </tr>
+                    <tr>
+                        <td>Tasa Cos Efe Anual</td>
+                        <td>${annualEffectiveCostRate!0.0}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><br>
+    <div>
+        <table id=\"table3\">
+            <thead>
+                <tr>
+                    <th># Cuota</th>
+                    <th>Capital</th>
+                    <th>Intereses</th>
+                    <th>Comisión</th>
+                    <th>Seguros</th>
+                    <th>Cuota Total</th>
+                    <th>Fecha Pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <#list fees as fee>
+                    <tr>
+                        <td>${(fee.feeNumber)!0.0}</td>
+                        <td>${(fee.principalAmount)!0.0}</td>
+                        <td>${(fee.interestsAmount)!0.0}</td>
+                        <td>${(fee.commissionAmount)!0.0}</td>
+                        <td>${(fee.insuranceAmount)!0.0}</td>
+                        <td>${(fee.totalFee)!0.0}</td>
+                        <td>${(fee.feeExpirationDate)!}</td>
+                    </tr>
+                </#list>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

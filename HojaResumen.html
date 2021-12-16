@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang=\"es\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Document</title>
+    <style>
+        table#table1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        table#table1,
+        table#table1 td,
+        table#table1 th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table#table1 td,
+        table#table1 th {
+            margin: 0;
+            padding: 6px;
+            width: 50%;
+        }
+
+        body>p:nth-child(1) {
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>hoja resumen</p>
+    <p>La presente Hoja Resumen es un anexo que forma parte integrante del Contrato de Crédito Personal «Préstamo
+        Preferente»</p>
+    <div>
+        <p>1. Información principal </p>
+        <ol>
+            <li>Monto del crédito S/ <input type=\"checkbox\" name=\"\" id=\"\" checked=\"checked\"> US$ <input
+                    type=\"checkbox\" name=\"\" id=\"\"> <strong>${loanAmountRequest!0.0}</strong></li>
+            <li>la tasa de interés compensatorio efectiva anual (TEA) es
+                <strong>${annualEffectiveInterestRate!0.0}%</strong> fija, calculada tomando una base anual de 360 días.
+            </li>
+            <li>Monto total de intereses compensatorios S/ <input type=\"checkbox\" name=\"\" id=\"\"
+                    checked=\"checked\"> US$ <input type=\"checkbox\" name=\"\" id=\"\">
+                <strong>${loanAmount!0.0}</strong> Calculado al plazo del crédito (1)</li>
+            <li>Plazo del crédito: <strong>${months!24}</strong> meses.</li>
+            <li>El interés moratorio se cobra ante el incumplimiento de pago de la cuota del crédito, se computa y cobra
+                a partir de la fecha en la que el cliente incurre en mora hasta la fecha en que cancele la cuota del
+                crédito adeudada, sin perjuicio del cobro de interés convencional compensatorio pactado. </li>
+            <li>
+                <p id=\"1\">La tasa de interés se calcula de acuerdo con el límite establecido por el Banco Central de
+                    Reserva del Perú (BCRP) y está sujeta a variación semestral (may-nov/dic-abr). Toda actualización de
+                    la tasa de interés moratorio dispuesta por el BCRP aplicará en forma automática desde la fecha de su
+                    entrada en vigencia sin necesidad de aviso previo a EL CLIENTE.</p>
+                <table aria-describedby=\"1\" id=\"table1\">
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Tasa de Interés Moratorio aplicable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Soles</td>
+                            <td>12.51%</td>
+                        </tr>
+                        <tr>
+                            <td>Dólares</td>
+                            <td>10.26%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>(*) El Interés Moratorio será cobrado en la misma moneda con la que se contrató el crédito, estas
+                    tasas son fijadas conforme al límite establecido por el Banco Central de Reserva del Perú (BCRP),
+                    las cuales podrán estar sujetas a variación semestral, conforme a lo que establezca el BCRP.EL BANCO
+                    procederá a realizar el reporte correspondiente ante la Central de Riesgos de la SBS con la
+                    calificación respectiva, de acuerdo con el Reglamento para la Evaluación y Clasificación del Deudor
+                    y la Exigencia de Provisiones vigente.</p>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>
